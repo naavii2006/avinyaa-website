@@ -79,19 +79,24 @@
 </head>
 <body class="font-sans bg-brand-lightBg text-gray-800 flex flex-col min-h-screen custom-scrollbar pb-20 lg:pb-0">
 
-    <!-- HEADER / NAVIGATION -->
+    <!-- TOP UTILITY NAVBAR -->
+    <div class="bg-brand-forest text-white/90 py-1.5 px-4 sm:px-6 lg:px-8 text-[10px] sm:text-xs flex justify-between items-center z-50 relative border-b border-brand-leaf">
+        <div class="flex items-center gap-4">
+            <span class="inline-flex items-center gap-1"><i class="fa-solid fa-location-dot text-brand-amber"></i> Jalna, Maharashtra</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <a href="tel:+919370073008" class="hover:text-brand-amber transition-colors font-semibold"><i class="fa-solid fa-phone text-brand-amber mr-1"></i> +91 93700 73008</a>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER / NAVIGATION -->
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 sm:h-20">
-                <!-- Brand Logo & Tagline -->
-                <a href="#home" onclick="navigateTo('home')" class="flex items-center gap-2.5 sm:gap-3 group">
-                    <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-brand-forest flex items-center justify-center text-brand-amber text-lg sm:text-xl font-bold shadow-md group-hover:scale-105 transition-transform">
-                        <i class="fa-solid fa-seedling"></i>
-                    </div>
-                    <div>
-                        <span class="text-lg sm:text-2xl font-extrabold tracking-tight text-brand-forest block leading-none">AVINYAA</span>
-                        <span class="text-[9px] sm:text-[10px] tracking-widest text-brand-gold uppercase font-semibold block mt-1">Food Processing</span>
-                    </div>
+                
+                <!-- Brand Logo (Image Updated) -->
+                <a href="#home" onclick="navigateTo('home')" class="flex items-center group">
+                    <img src="logo.jpeg" alt="Avinyaa Food Processing Logo" class="h-12 sm:h-16 object-contain group-hover:scale-105 transition-transform rounded-lg">
                 </a>
 
                 <!-- Desktop Navigation Menu -->
@@ -171,7 +176,6 @@
                                 <span>Jalna, Maharashtra Agricultural Innovation</span>
                             </div>
                             
-                            <!-- Mobile optimized text size -->
                             <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
                                 From Farmers to <br class="hidden sm:block"><span class="text-brand-amber">Better Choices.</span>
                             </h1>
@@ -180,7 +184,6 @@
                                 Avinyaa Food Processing is building a farmer-connected food processing venture focused on innovative, value-added and consumer-focused plant-based food and beverage products.
                             </p>
                             
-                            <!-- Mobile buttons: full width stacked -->
                             <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-2">
                                 <button onclick="navigateTo('products')" class="w-full sm:w-auto px-6 py-3.5 sm:py-4 rounded-xl bg-brand-amber text-brand-darkGreen font-bold hover:bg-amber-300 transition-all shadow-lg active:scale-95 flex items-center justify-center gap-2">
                                     <span>Explore Our Products</span>
@@ -426,7 +429,7 @@
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-                <!-- Product Filters (Scrollable on mobile) -->
+                <!-- Product Filters -->
                 <div class="flex overflow-x-auto pb-4 justify-start sm:justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 no-scrollbar">
                     <button onclick="filterProducts('all')" class="filter-btn active whitespace-nowrap px-4 sm:px-5 py-2 rounded-full border border-brand-forest text-xs font-bold transition-all bg-brand-forest text-white">All Products</button>
                     <button onclick="filterProducts('launching')" class="filter-btn whitespace-nowrap px-4 sm:px-5 py-2 rounded-full border border-brand-forest text-xs font-bold text-brand-forest transition-all hover:bg-brand-forest hover:text-white">Launching Soon</button>
@@ -713,14 +716,13 @@
                         </div>
                     </div>
 
-                    <!-- Contact Form (Mobile Optimized text-base to stop zooming) -->
+                    <!-- Contact Form -->
                     <div class="lg:col-span-7 bg-white p-6 sm:p-10 rounded-3xl border border-gray-200 shadow-lg">
                         <h3 class="text-xl sm:text-2xl font-bold text-brand-forest mb-5 sm:mb-6">Send Us a Message</h3>
                         
                         <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
                             <div>
                                 <label class="block text-[11px] sm:text-xs font-bold uppercase text-gray-600 mb-1">Full Name *</label>
-                                <!-- Using text-base explicitly to prevent iOS auto-zoom -->
                                 <input type="text" id="contact-name" name="name" required placeholder="Enter your name" class="w-full px-4 py-3 sm:py-3.5 rounded-xl border border-gray-200 text-base sm:text-sm focus:outline-none focus:border-brand-forest focus:ring-1 focus:ring-brand-forest">
                             </div>
 
@@ -771,13 +773,11 @@
                 
                 <!-- Col 1: Brand Info -->
                 <div class="space-y-4 text-center sm:text-left">
-                    <div class="flex items-center justify-center sm:justify-start gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-brand-forest flex items-center justify-center text-brand-amber text-lg font-bold">
-                            <i class="fa-solid fa-seedling"></i>
-                        </div>
-                        <span class="text-xl font-extrabold tracking-tight text-white">AVINYAA</span>
+                    <div class="flex items-center justify-center sm:justify-start">
+                        <!-- Footer Logo Integration -->
+                        <img src="logo.jpeg" alt="Avinyaa Food Processing Logo" class="h-20 object-contain rounded-xl shadow-lg border border-white/10">
                     </div>
-                    <p class="text-xs sm:text-sm text-emerald-100/70 leading-relaxed">
+                    <p class="text-xs sm:text-sm text-emerald-100/70 leading-relaxed mt-4">
                         Avinyaa Food Processing is an emerging farmer-connected food venture based in Jalna, Maharashtra.
                     </p>
                 </div>
@@ -905,7 +905,8 @@
             const submitBtn = document.getElementById('submit-btn');
             const originalText = submitBtn.innerHTML;
             submitBtn.disabled = true;
-            submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Sending...`;
+            // Updated loading text to manage expectations
+            submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Waking server, please wait (up to 30s)...`;
 
             const formData = {
                 name: document.getElementById('contact-name').value,
