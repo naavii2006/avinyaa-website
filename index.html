@@ -52,11 +52,6 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(27, 67, 50, 0.08);
         }
-        .gradient-text {
-            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 50%, #b58231 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
         .hero-gradient {
             background: linear-gradient(135deg, #081c15 0%, #1b4332 60%, #2d6a4f 100%);
         }
@@ -74,6 +69,7 @@
 </head>
 <body class="font-sans bg-brand-lightBg text-gray-800 flex flex-col min-h-screen custom-scrollbar">
 
+    <!-- HEADER / NAVIGATION -->
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -92,18 +88,18 @@
                 <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2">
                     <button onclick="navigateTo('home')" id="nav-home" class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold transition-all hover:bg-brand-softMint/50 hover:text-brand-forest">Home</button>
                     <button onclick="navigateTo('about')" id="nav-about" class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold transition-all hover:bg-brand-softMint/50 hover:text-brand-forest">About Us</button>
+                    <button onclick="navigateTo('founders')" id="nav-founders" class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold transition-all hover:bg-brand-softMint/50 hover:text-brand-forest">Founders</button>
                     <button onclick="navigateTo('products')" id="nav-products" class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold transition-all hover:bg-brand-softMint/50 hover:text-brand-forest">Products</button>
-                    <button onclick="navigateTo('problem-solution')" id="nav-problem-solution" class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold transition-all hover:bg-brand-softMint/50 hover:text-brand-forest">Challenge & Solution</button>
+                    <button onclick="navigateTo('problem-solution')" id="nav-problem-solution" class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold transition-all hover:bg-brand-softMint/50 hover:text-brand-forest">Solutions</button>
                     <button onclick="navigateTo('innovation')" id="nav-innovation" class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold transition-all hover:bg-brand-softMint/50 hover:text-brand-forest">Innovation</button>
                     <button onclick="navigateTo('market')" id="nav-market" class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold transition-all hover:bg-brand-softMint/50 hover:text-brand-forest">Market</button>
-                    <button onclick="navigateTo('farmers')" id="nav-farmers" class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold transition-all hover:bg-brand-softMint/50 hover:text-brand-forest">Farmers & Impact</button>
-                    <button onclick="navigateTo('contact')" id="nav-contact" class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold transition-all hover:bg-brand-softMint/50 hover:text-brand-forest">Contact</button>
+                    <button onclick="navigateTo('farmers')" id="nav-farmers" class="nav-btn px-3 py-2 rounded-lg text-sm font-semibold transition-all hover:bg-brand-softMint/50 hover:text-brand-forest">Impact</button>
                 </nav>
 
                 <!-- Header CTA & Mobile Hamburger -->
                 <div class="flex items-center gap-3">
                     <button onclick="navigateTo('contact')" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-brand-forest text-white text-xs sm:text-sm font-semibold hover:bg-brand-leaf transition-colors shadow-sm">
-                        <span>Get In Touch</span>
+                        <span>Contact</span>
                         <i class="fa-solid fa-arrow-right text-xs"></i>
                     </button>
                     
@@ -118,6 +114,7 @@
         <div id="mobile-menu" class="hidden lg:hidden border-b border-gray-200 bg-white px-4 pt-2 pb-6 space-y-2 shadow-lg">
             <button onclick="navigateTo('home')" class="mobile-nav-btn block w-full text-left px-4 py-2.5 rounded-lg text-base font-medium text-gray-700 hover:bg-brand-softMint hover:text-brand-forest">Home</button>
             <button onclick="navigateTo('about')" class="mobile-nav-btn block w-full text-left px-4 py-2.5 rounded-lg text-base font-medium text-gray-700 hover:bg-brand-softMint hover:text-brand-forest">About Us</button>
+            <button onclick="navigateTo('founders')" class="mobile-nav-btn block w-full text-left px-4 py-2.5 rounded-lg text-base font-medium text-gray-700 hover:bg-brand-softMint hover:text-brand-forest">Founders</button>
             <button onclick="navigateTo('products')" class="mobile-nav-btn block w-full text-left px-4 py-2.5 rounded-lg text-base font-medium text-gray-700 hover:bg-brand-softMint hover:text-brand-forest">Products</button>
             <button onclick="navigateTo('problem-solution')" class="mobile-nav-btn block w-full text-left px-4 py-2.5 rounded-lg text-base font-medium text-gray-700 hover:bg-brand-softMint hover:text-brand-forest">Challenge & Solution</button>
             <button onclick="navigateTo('innovation')" class="mobile-nav-btn block w-full text-left px-4 py-2.5 rounded-lg text-base font-medium text-gray-700 hover:bg-brand-softMint hover:text-brand-forest">Innovation</button>
@@ -130,6 +127,7 @@
     <!-- MAIN CONTENT CONTAINER -->
     <main class="flex-grow">
 
+        <!-- 1. HOME SECTION -->
         <section id="page-home" class="page-section active">
             <!-- Hero Banner -->
             <div class="relative hero-gradient text-white overflow-hidden py-16 sm:py-24 lg:py-32">
@@ -220,129 +218,6 @@
                 </div>
             </div>
 
-            <!-- Initial Product Range Preview -->
-            <div class="py-20 bg-brand-cream/30 border-y border-brand-gold/10">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center max-w-3xl mx-auto mb-16">
-                        <span class="text-brand-leaf font-bold text-sm uppercase tracking-wider">Product Showcase</span>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-forest mt-2">Our Initial Product Range</h2>
-                        <p class="text-gray-600 mt-4">Delicious, nutritious plant-based beverages crafted to delight every palate.</p>
-                    </div>
-
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <!-- Product Card 1 -->
-                        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-gray-100 flex flex-col justify-between group">
-                            <div>
-                                <div class="w-full h-48 bg-emerald-50 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden group-hover:bg-emerald-100/70 transition-colors">
-                                    <i class="fa-solid fa-bottle-droplet text-6xl text-brand-forest/40 group-hover:scale-110 transition-transform"></i>
-                                    <span class="absolute top-3 right-3 bg-brand-forest text-white text-[10px] uppercase font-extrabold px-2.5 py-1 rounded-full">Launching Soon</span>
-                                </div>
-                                <h3 class="text-xl font-bold text-brand-forest mb-2">Plain Soya Beverage</h3>
-                                <p class="text-sm text-gray-600 leading-relaxed mb-4">A simple soybean-based plant beverage designed as a versatile everyday beverage option.</p>
-                            </div>
-                            <button onclick="openProductModal('Plain Soya Beverage', 'A versatile, pure soybean beverage ideal for daily nutrition and plant-based dietary lifestyle.')" class="w-full py-2.5 rounded-lg border border-brand-forest text-brand-forest text-sm font-semibold hover:bg-brand-forest hover:text-white transition-colors">
-                                Learn More
-                            </button>
-                        </div>
-
-                        <!-- Product Card 2 -->
-                        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-gray-100 flex flex-col justify-between group">
-                            <div>
-                                <div class="w-full h-48 bg-amber-50 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden group-hover:bg-amber-100/70 transition-colors">
-                                    <i class="fa-solid fa-lemon text-6xl text-amber-500/50 group-hover:scale-110 transition-transform"></i>
-                                    <span class="absolute top-3 right-3 bg-brand-forest text-white text-[10px] uppercase font-extrabold px-2.5 py-1 rounded-full">Launching Soon</span>
-                                </div>
-                                <h3 class="text-xl font-bold text-brand-forest mb-2">Mango Soya Beverage</h3>
-                                <p class="text-sm text-gray-600 leading-relaxed mb-4">A flavoured beverage combining familiar tropical mango flavor with plant-based wellness.</p>
-                            </div>
-                            <button onclick="openProductModal('Mango Soya Beverage', 'Combining rich mango pulp notes with natural soy protein for a refreshing treat.')" class="w-full py-2.5 rounded-lg border border-brand-forest text-brand-forest text-sm font-semibold hover:bg-brand-forest hover:text-white transition-colors">
-                                Learn More
-                            </button>
-                        </div>
-
-                        <!-- Product Card 3 -->
-                        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-gray-100 flex flex-col justify-between group">
-                            <div>
-                                <div class="w-full h-48 bg-amber-900/10 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden group-hover:bg-amber-900/20 transition-colors">
-                                    <i class="fa-solid fa-cookie text-6xl text-amber-800/40 group-hover:scale-110 transition-transform"></i>
-                                    <span class="absolute top-3 right-3 bg-brand-forest text-white text-[10px] uppercase font-extrabold px-2.5 py-1 rounded-full">Launching Soon</span>
-                                </div>
-                                <h3 class="text-xl font-bold text-brand-forest mb-2">Chocolate Soya Beverage</h3>
-                                <p class="text-sm text-gray-600 leading-relaxed mb-4">Developed to offer a familiar, indulgence cocoa flavor experience for all age groups.</p>
-                            </div>
-                            <button onclick="openProductModal('Chocolate Soya Beverage', 'Rich chocolate taste paired with high quality plant protein for workout & daily energy.')" class="w-full py-2.5 rounded-lg border border-brand-forest text-brand-forest text-sm font-semibold hover:bg-brand-forest hover:text-white transition-colors">
-                                Learn More
-                            </button>
-                        </div>
-
-                        <!-- Product Card 4 -->
-                        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-gray-100 flex flex-col justify-between group">
-                            <div>
-                                <div class="w-full h-48 bg-emerald-50 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden group-hover:bg-emerald-100/70 transition-colors">
-                                    <i class="fa-solid fa-mortar-pestle text-6xl text-emerald-600/40 group-hover:scale-110 transition-transform"></i>
-                                    <span class="absolute top-3 right-3 bg-brand-forest text-white text-[10px] uppercase font-extrabold px-2.5 py-1 rounded-full">Launching Soon</span>
-                                </div>
-                                <h3 class="text-xl font-bold text-brand-forest mb-2">Ilaychi / Cardamom Beverage</h3>
-                                <p class="text-sm text-gray-600 leading-relaxed mb-4"> infused with traditional cardamom flavour for a distinctive Indian herbal taste.</p>
-                            </div>
-                            <button onclick="openProductModal('Ilaychi / Cardamom Soya Beverage', 'Infused with aromatic cardamom extract offering authentic traditional taste.')" class="w-full py-2.5 rounded-lg border border-brand-forest text-brand-forest text-sm font-semibold hover:bg-brand-forest hover:text-white transition-colors">
-                                Learn More
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="text-center mt-12">
-                        <button onclick="navigateTo('products')" class="px-8 py-3.5 rounded-xl bg-brand-forest text-white font-semibold hover:bg-brand-leaf transition-colors shadow-md">
-                            View All Products & Roadmap
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Why Avinyaa Pillars -->
-            <div class="py-20 bg-white">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center max-w-3xl mx-auto mb-16">
-                        <span class="text-brand-gold font-bold text-sm uppercase tracking-wider">Our Core Strengths</span>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-forest mt-2">Why Avinyaa Food Processing?</h2>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:border-brand-mint transition-all hover:shadow-lg">
-                            <div class="w-14 h-14 rounded-2xl bg-brand-softMint text-brand-forest flex items-center justify-center text-2xl mb-6">
-                                <i class="fa-solid fa-hands-holding-circle"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-brand-forest mb-3">Farmer Connected</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">Creating direct opportunities for value addition to local agricultural produce in Jalna and beyond.</p>
-                        </div>
-
-                        <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:border-brand-mint transition-all hover:shadow-lg">
-                            <div class="w-14 h-14 rounded-2xl bg-brand-softMint text-brand-forest flex items-center justify-center text-2xl mb-6">
-                                <i class="fa-solid fa-heart-pulse"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-brand-forest mb-3">Consumer Focused</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">Developing products with taste, convenience and changing modern dietary preferences in mind.</p>
-                        </div>
-
-                        <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:border-brand-mint transition-all hover:shadow-lg">
-                            <div class="w-14 h-14 rounded-2xl bg-brand-softMint text-brand-forest flex items-center justify-center text-2xl mb-6">
-                                <i class="fa-solid fa-lightbulb"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-brand-forest mb-3">Innovation Driven</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">Exploring new ideas, processing techniques, and flavor combinations in plant-based food science.</p>
-                        </div>
-
-                        <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:border-brand-mint transition-all hover:shadow-lg">
-                            <div class="w-14 h-14 rounded-2xl bg-brand-softMint text-brand-forest flex items-center justify-center text-2xl mb-6">
-                                <i class="fa-solid fa-chart-line"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-brand-forest mb-3">Built to Scale</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">Developing a sustainable, high-capacity business model designed for national future expansion.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <!-- Closing CTA Banner -->
             <div class="bg-brand-forest text-white py-16">
                 <div class="max-w-5xl mx-auto px-4 text-center space-y-6">
@@ -357,6 +232,7 @@
             </div>
         </section>
 
+        <!-- 2. ABOUT US SECTION -->
         <section id="page-about" class="page-section">
             <div class="bg-brand-forest text-white py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -431,44 +307,140 @@
                         </p>
                     </div>
                 </div>
-
-                <!-- Interactive Approach Workflow -->
-                <div class="bg-brand-cream/40 rounded-3xl p-8 sm:p-12 border border-brand-gold/20">
-                    <div class="text-center max-w-2xl mx-auto mb-12">
-                        <span class="text-brand-gold font-bold text-sm uppercase tracking-wider">Methodology</span>
-                        <h2 class="text-3xl font-extrabold text-brand-forest mt-1">Our Integrated Approach</h2>
-                        <p class="text-gray-600 text-sm mt-2">Connecting the value chain seamlessly from field to table.</p>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center relative">
-                            <div class="w-12 h-12 bg-emerald-100 text-brand-forest rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">1</div>
-                            <h4 class="font-bold text-lg text-brand-forest mb-2">Agriculture</h4>
-                            <p class="text-xs text-gray-500">Sourcing raw produce directly from local farming communities in Maharashtra.</p>
-                        </div>
-
-                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center relative">
-                            <div class="w-12 h-12 bg-emerald-100 text-brand-forest rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">2</div>
-                            <h4 class="font-bold text-lg text-brand-forest mb-2">Processing</h4>
-                            <p class="text-xs text-gray-500">Applying quality food processing standards to extract optimal nutrition.</p>
-                        </div>
-
-                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center relative">
-                            <div class="w-12 h-12 bg-emerald-100 text-brand-forest rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">3</div>
-                            <h4 class="font-bold text-lg text-brand-forest mb-2">Innovation</h4>
-                            <p class="text-xs text-gray-500">Infusing consumer-friendly formulations, flavors and functional benefits.</p>
-                        </div>
-
-                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center relative">
-                            <div class="w-12 h-12 bg-emerald-100 text-brand-forest rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">4</div>
-                            <h4 class="font-bold text-lg text-brand-forest mb-2">Consumer</h4>
-                            <p class="text-xs text-gray-500">Delivering tasty, accessible plant-based choices to market shelves.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
+        <!-- 3. FOUNDERS SECTION -->
+        <section id="page-founders" class="page-section bg-brand-lightBg">
+            <div class="bg-brand-forest text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <span class="text-brand-amber text-sm font-semibold tracking-wider uppercase">Leadership</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold mt-2">Meet Our Founders</h1>
+                    <p class="mt-4 text-emerald-100 max-w-2xl mx-auto">Building Better Food. Creating Better Opportunities for Farmers.</p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        At <strong class="text-brand-forest">Avinyaa Food Processing</strong>, we believe that the future of food lies in combining farmer-focused sourcing, food innovation and consumer needs.
+                        Our founders bring together experience in agriculture, farmer networks, business development and technology to build a food-processing company that creates value from farm to consumer.
+                    </p>
+                </div>
+
+                <!-- Founders Grid -->
+                <div class="grid lg:grid-cols-2 gap-12 mb-20">
+                    
+                    <!-- Karan Bhagure Card -->
+                    <div class="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden flex flex-col group">
+                        <div class="aspect-[4/5] sm:aspect-square md:aspect-[4/5] w-full overflow-hidden bg-gray-100 relative">
+                            <img src="ceo.jpeg" alt="Karan Balchand Bhagure" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-8 sm:p-10 flex-grow flex flex-col">
+                            <h3 class="text-2xl font-extrabold text-brand-forest">Karan Balchand Bhagure</h3>
+                            <p class="text-brand-gold font-bold text-sm uppercase tracking-wider mb-6">Founder & CEO</p>
+                            
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                                Karan is a young entrepreneur with practical experience across agriculture, agri-business, farmer engagement, renewable energy, and food-processing ventures. Coming from an agriculture-connected background, Karan has worked closely with farmers and understands the challenges they face in getting better value for their produce.
+                            </p>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-6">
+                                He has served as the CEO of BBF Jalna Farmers Producer Company Limited, gaining hands-on experience in farmer engagement, agricultural commodities, procurement, and trading. He is also the Founder & CEO of Avinyaa Agri Solutions and Avinyaa Renewables Pvt. Ltd.
+                            </p>
+                            
+                            <div class="mt-auto bg-emerald-50 p-5 rounded-2xl border border-emerald-100">
+                                <h4 class="font-bold text-brand-forest text-sm mb-2"><i class="fa-solid fa-eye text-brand-mint mr-2"></i>Vision</h4>
+                                <p class="text-xs text-gray-700 italic">"My goal is to build a business that creates value not only after the product reaches the market, but from the farmer level itself—connecting agricultural production, food innovation and consumer needs through a sustainable value chain."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Abhijit Pawar Card -->
+                    <div class="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden flex flex-col group">
+                        <div class="aspect-[4/5] sm:aspect-square md:aspect-[4/5] w-full overflow-hidden bg-gray-100 relative">
+                            <img src="cfo.jpeg" alt="Abhijit Pawar" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-8 sm:p-10 flex-grow flex flex-col">
+                            <h3 class="text-2xl font-extrabold text-brand-forest">Abhijit Pawar</h3>
+                            <p class="text-brand-gold font-bold text-sm uppercase tracking-wider mb-6">Co-Founder & CFO</p>
+                            
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                                Abhijit is a young entrepreneur with practical experience in accounting, financial management, and business operations. He contributes to the company's business strategy, financial planning and growth initiatives. His entrepreneurial journey has been closely connected with agriculture and agri-business.
+                            </p>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-6">
+                                He has worked as an Accountant at BBF Jalna Farmers Producer Company Limited, gaining hands-on experience in financial records and operations. He is also the Co-Founder & CFO of Avinyaa Agri Solutions and Avinyaa Renewables Pvt. Ltd.
+                            </p>
+                            
+                            <div class="mt-auto bg-emerald-50 p-5 rounded-2xl border border-emerald-100">
+                                <h4 class="font-bold text-brand-forest text-sm mb-2"><i class="fa-solid fa-bullseye text-brand-mint mr-2"></i>Focus</h4>
+                                <p class="text-xs text-gray-700 font-semibold mb-2">Business Strategy | Finance | Growth | Market Development</p>
+                                <p class="text-xs text-gray-700 italic">"My focus is to build strong financial systems and disciplined business operations that can support sustainable growth, efficient resource utilization and long-term value creation."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Our Founding Team & Beliefs -->
+                <div class="bg-brand-forest text-white rounded-3xl p-8 sm:p-12 mb-16 text-center shadow-lg relative overflow-hidden">
+                    <i class="fa-solid fa-users text-8xl text-white/5 absolute top-10 right-10"></i>
+                    <h2 class="text-3xl font-extrabold text-brand-amber mb-6">Our Founding Team</h2>
+                    <p class="text-emerald-100 max-w-3xl mx-auto mb-8 leading-relaxed">
+                        Together, the founding team is working to create a food-processing ecosystem where: <br><br>
+                        <span class="font-bold text-white bg-white/10 px-4 py-2 rounded-lg inline-block">Farmers → Quality Raw Material → Food Innovation → Value Addition → Consumers</span>
+                    </p>
+                    <p class="text-emerald-100 max-w-2xl mx-auto mb-8 leading-relaxed text-sm">
+                        We aim to build products that are practical, nutritious, innovative and commercially scalable, while creating stronger value chains for agricultural produce.
+                    </p>
+                    
+                    <div class="bg-brand-darkGreen/50 p-6 rounded-2xl inline-block border border-brand-leaf/30">
+                        <h4 class="text-brand-gold text-xs font-bold uppercase tracking-wider mb-2">Our Belief</h4>
+                        <p class="text-lg font-semibold">“When farmers get better value and consumers get better food, everyone in the value chain grows.”</p>
+                    </div>
+                </div>
+
+                <!-- What Drives Us -->
+                <div>
+                    <h3 class="text-2xl font-extrabold text-brand-forest text-center mb-10">What Drives Us</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                        
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center hover:border-brand-mint transition-colors">
+                            <div class="text-3xl mb-3">🌱</div>
+                            <h4 class="font-bold text-brand-forest text-sm mb-2">Farmer First</h4>
+                            <p class="text-xs text-gray-500">Building stronger connections between farmers and value-added food markets.</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center hover:border-brand-mint transition-colors">
+                            <div class="text-3xl mb-3">🥗</div>
+                            <h4 class="font-bold text-brand-forest text-sm mb-2">Consumer Focused</h4>
+                            <p class="text-xs text-gray-500">Developing products around changing consumer preferences and needs.</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center hover:border-brand-mint transition-colors">
+                            <div class="text-3xl mb-3">💡</div>
+                            <h4 class="font-bold text-brand-forest text-sm mb-2">Food Innovation</h4>
+                            <p class="text-xs text-gray-500">Exploring new products, ingredients and processing opportunities.</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center hover:border-brand-mint transition-colors">
+                            <div class="text-3xl mb-3">📈</div>
+                            <h4 class="font-bold text-brand-forest text-sm mb-2">Scalable Business</h4>
+                            <p class="text-xs text-gray-500">Building systems and products that can grow across markets.</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center hover:border-brand-mint transition-colors sm:col-span-2 lg:col-span-1">
+                            <div class="text-3xl mb-3">🤝</div>
+                            <h4 class="font-bold text-brand-forest text-sm mb-2">Long-Term Impact</h4>
+                            <p class="text-xs text-gray-500">Creating sustainable value for farmers, consumers and the ecosystem.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. PRODUCTS SECTION -->
         <section id="page-products" class="page-section">
             <div class="bg-brand-forest text-white py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -497,13 +469,8 @@
                             </div>
                             <h3 class="text-xl font-bold text-brand-forest mb-2">Plain Soya Beverage</h3>
                             <p class="text-xs text-gray-500 mb-4">Pure, smooth, and versatile everyday plant-based dairy alternative.</p>
-                            <div class="space-y-2 mb-6">
-                                <div class="text-xs text-gray-600 flex items-center gap-2"><i class="fa-solid fa-check text-brand-mint"></i> High Quality Plant Protein</div>
-                                <div class="text-xs text-gray-600 flex items-center gap-2"><i class="fa-solid fa-check text-brand-mint"></i> Zero Cholesterol</div>
-                                <div class="text-xs text-gray-600 flex items-center gap-2"><i class="fa-solid fa-check text-brand-mint"></i> Smooth Texture Formulation</div>
-                            </div>
                         </div>
-                        <button onclick="openInquiryModal('Plain Soya Beverage')" class="w-full py-3 rounded-xl bg-brand-forest text-white font-semibold text-xs hover:bg-brand-leaf transition-colors flex items-center justify-center gap-2">
+                        <button onclick="openInquiryModal('Plain Soya Beverage')" class="w-full py-3 mt-4 rounded-xl bg-brand-forest text-white font-semibold text-xs hover:bg-brand-leaf transition-colors flex items-center justify-center gap-2">
                             <i class="fa-solid fa-bell"></i>
                             <span>Express Interest</span>
                         </button>
@@ -513,18 +480,13 @@
                     <div class="product-item launching bg-white rounded-3xl p-6 border border-gray-100 shadow-md hover:shadow-xl transition-all flex flex-col justify-between">
                         <div>
                             <div class="bg-amber-50 rounded-2xl h-52 flex items-center justify-center mb-6 relative">
-                                <i class="fa-solid fa-sun text-7xl text-amber-500/60"></i>
+                                <i class="fa-solid fa-lemon text-7xl text-amber-500/60"></i>
                                 <span class="absolute top-3 left-3 bg-brand-forest text-white text-[10px] uppercase font-extrabold px-3 py-1 rounded-full">Launching Soon</span>
                             </div>
                             <h3 class="text-xl font-bold text-brand-forest mb-2">Mango Soya Beverage</h3>
                             <p class="text-xs text-gray-500 mb-4">A tropical delight blending Alphonso mango notes with soy beverage.</p>
-                            <div class="space-y-2 mb-6">
-                                <div class="text-xs text-gray-600 flex items-center gap-2"><i class="fa-solid fa-check text-brand-mint"></i> Familiar Taste Profile</div>
-                                <div class="text-xs text-gray-600 flex items-center gap-2"><i class="fa-solid fa-check text-brand-mint"></i> Ideal for Kids & Youth</div>
-                                <div class="text-xs text-gray-600 flex items-center gap-2"><i class="fa-solid fa-check text-brand-mint"></i> Refreshing Drink</div>
-                            </div>
                         </div>
-                        <button onclick="openInquiryModal('Mango Soya Beverage')" class="w-full py-3 rounded-xl bg-brand-forest text-white font-semibold text-xs hover:bg-brand-leaf transition-colors flex items-center justify-center gap-2">
+                        <button onclick="openInquiryModal('Mango Soya Beverage')" class="w-full py-3 mt-4 rounded-xl bg-brand-forest text-white font-semibold text-xs hover:bg-brand-leaf transition-colors flex items-center justify-center gap-2">
                             <i class="fa-solid fa-bell"></i>
                             <span>Express Interest</span>
                         </button>
@@ -539,13 +501,8 @@
                             </div>
                             <h3 class="text-xl font-bold text-brand-forest mb-2">Chocolate Soya Beverage</h3>
                             <p class="text-xs text-gray-500 mb-4">Indulgent chocolate flavor delivering taste and health in every sip.</p>
-                            <div class="space-y-2 mb-6">
-                                <div class="text-xs text-gray-600 flex items-center gap-2"><i class="fa-solid fa-check text-brand-mint"></i> Rich Cocoa Blend</div>
-                                <div class="text-xs text-gray-600 flex items-center gap-2"><i class="fa-solid fa-check text-brand-mint"></i> Fitness & Gym Friendly</div>
-                                <div class="text-xs text-gray-600 flex items-center gap-2"><i class="fa-solid fa-check text-brand-mint"></i> Delicious Snack Drink</div>
-                            </div>
                         </div>
-                        <button onclick="openInquiryModal('Chocolate Soya Beverage')" class="w-full py-3 rounded-xl bg-brand-forest text-white font-semibold text-xs hover:bg-brand-leaf transition-colors flex items-center justify-center gap-2">
+                        <button onclick="openInquiryModal('Chocolate Soya Beverage')" class="w-full py-3 mt-4 rounded-xl bg-brand-forest text-white font-semibold text-xs hover:bg-brand-leaf transition-colors flex items-center justify-center gap-2">
                             <i class="fa-solid fa-bell"></i>
                             <span>Express Interest</span>
                         </button>
@@ -558,70 +515,19 @@
                                 <i class="fa-solid fa-seedling text-7xl text-emerald-600/60"></i>
                                 <span class="absolute top-3 left-3 bg-brand-forest text-white text-[10px] uppercase font-extrabold px-3 py-1 rounded-full">Launching Soon</span>
                             </div>
-                            <h3 class="text-xl font-bold text-brand-forest mb-2">Ilaychi / Cardamom Beverage</h3>
+                            <h3 class="text-xl font-bold text-brand-forest mb-2">Ilaychi Beverage</h3>
                             <p class="text-xs text-gray-500 mb-4">Aromatic traditional cardamom flavor crafted for Indian consumers.</p>
-                            <div class="space-y-2 mb-6">
-                                <div class="text-xs text-gray-600 flex items-center gap-2"><i class="fa-solid fa-check text-brand-mint"></i> Authentic Indian Spice</div>
-                                <div class="text-xs text-gray-600 flex items-center gap-2"><i class="fa-solid fa-check text-brand-mint"></i> Soothing & Aromatic</div>
-                                <div class="text-xs text-gray-600 flex items-center gap-2"><i class="fa-solid fa-check text-brand-mint"></i> Traditional Taste Preference</div>
-                            </div>
                         </div>
-                        <button onclick="openInquiryModal('Ilaychi Soya Beverage')" class="w-full py-3 rounded-xl bg-brand-forest text-white font-semibold text-xs hover:bg-brand-leaf transition-colors flex items-center justify-center gap-2">
+                        <button onclick="openInquiryModal('Ilaychi Soya Beverage')" class="w-full py-3 mt-4 rounded-xl bg-brand-forest text-white font-semibold text-xs hover:bg-brand-leaf transition-colors flex items-center justify-center gap-2">
                             <i class="fa-solid fa-bell"></i>
                             <span>Express Interest</span>
                         </button>
                     </div>
                 </div>
-
-                <!-- Future Products & Voting Widget -->
-                <div class="mt-20 bg-brand-cream/50 p-8 sm:p-12 rounded-3xl border border-brand-gold/30">
-                    <div class="grid lg:grid-cols-12 gap-8 items-center">
-                        <div class="lg:col-span-6 space-y-4">
-                            <span class="text-brand-gold font-bold text-xs uppercase tracking-wider">Product Roadmap</span>
-                            <h3 class="text-2xl sm:text-3xl font-extrabold text-brand-forest">Future Products & Flavors</h3>
-                            <p class="text-sm text-gray-600 leading-relaxed">
-                                Our product development journey will continue with new flavours, formats and value-added plant-based food products based on consumer feedback and market opportunities.
-                            </p>
-                            <p class="text-xs font-semibold text-brand-forest">Have a flavor or product recommendation? Vote below or suggest your favorite!</p>
-                        </div>
-
-                        <!-- Flavor Voting Box -->
-                        <div class="lg:col-span-6 bg-white p-6 rounded-2xl shadow-md border border-gray-100 space-y-4">
-                            <h4 class="font-bold text-brand-forest text-sm">Consumer Preference Poll</h4>
-                            <div class="space-y-3">
-                                <div>
-                                    <div class="flex justify-between text-xs font-semibold mb-1">
-                                        <span>Vanilla Soya Beverage</span>
-                                        <span id="vote-count-1">142 votes</span>
-                                    </div>
-                                    <button onclick="castVote(1)" class="w-full h-8 bg-gray-100 rounded-lg overflow-hidden relative text-left hover:bg-emerald-50 transition-colors">
-                                        <div id="bar-1" class="h-full bg-brand-mint/40" style="width: 65%;"></div>
-                                        <span class="absolute inset-0 flex items-center px-3 text-xs font-semibold text-brand-forest">Vote Vanilla</span>
-                                    </button>
-                                </div>
-
-                                <div>
-                                    <div class="flex justify-between text-xs font-semibold mb-1">
-                                        <span>Badam / Almond Soya Mix</span>
-                                        <span id="vote-count-2">210 votes</span>
-                                    </div>
-                                    <button onclick="castVote(2)" class="w-full h-8 bg-gray-100 rounded-lg overflow-hidden relative text-left hover:bg-emerald-50 transition-colors">
-                                        <div id="bar-2" class="h-full bg-brand-mint/40" style="width: 82%;"></div>
-                                        <span class="absolute inset-0 flex items-center px-3 text-xs font-semibold text-brand-forest">Vote Badam / Almond</span>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <form onsubmit="submitFlavorSuggestion(event)" class="pt-2 flex gap-2">
-                                <input type="text" id="new-flavor-input" placeholder="Suggest a new flavor..." required class="flex-grow px-3 py-2 text-xs border border-gray-200 rounded-lg focus:outline-none focus:border-brand-forest">
-                                <button type="submit" class="px-4 py-2 bg-brand-forest text-white text-xs font-bold rounded-lg hover:bg-brand-leaf transition-colors">Suggest</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
+        <!-- 5. PROBLEM & SOLUTION SECTION -->
         <section id="page-problem-solution" class="page-section">
             <div class="bg-brand-forest text-white py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -650,22 +556,15 @@
                         <div class="space-y-4">
                             <div class="bg-white p-5 rounded-2xl border border-rose-100 shadow-sm">
                                 <h3 class="font-bold text-gray-900 text-base mb-1">1. Limited Value Addition</h3>
-                                <p class="text-xs text-gray-600 leading-relaxed">A significant opportunity exists to create greater economic value from agricultural produce through processing and tailored product development.</p>
+                                <p class="text-xs text-gray-600 leading-relaxed">A significant opportunity exists to create greater economic value from agricultural produce through processing.</p>
                             </div>
-
                             <div class="bg-white p-5 rounded-2xl border border-rose-100 shadow-sm">
                                 <h3 class="font-bold text-gray-900 text-base mb-1">2. Farmer–Market Gap</h3>
-                                <p class="text-xs text-gray-600 leading-relaxed">Agricultural commodities often move through multiple intermediary stages before reaching consumers, missing out on value addition opportunities.</p>
+                                <p class="text-xs text-gray-600 leading-relaxed">Agricultural commodities often move through multiple intermediary stages before reaching consumers.</p>
                             </div>
-
                             <div class="bg-white p-5 rounded-2xl border border-rose-100 shadow-sm">
                                 <h3 class="font-bold text-gray-900 text-base mb-1">3. Changing Consumer Preferences</h3>
-                                <p class="text-xs text-gray-600 leading-relaxed">Consumers are increasingly exploring alternative food and beverage choices based on taste, convenience, lifestyle and personal health goals.</p>
-                            </div>
-
-                            <div class="bg-white p-5 rounded-2xl border border-rose-100 shadow-sm">
-                                <h3 class="font-bold text-gray-900 text-base mb-1">4. Plant-Based Awareness</h3>
-                                <p class="text-xs text-gray-600 leading-relaxed">Plant-based beverages remain an emerging category. Familiarity, taste, and local availability are critical factors in building broad adoption.</p>
+                                <p class="text-xs text-gray-600 leading-relaxed">Consumers are increasingly exploring alternative food and beverage choices based on health goals.</p>
                             </div>
                         </div>
                     </div>
@@ -685,60 +584,24 @@
                         <div class="space-y-4">
                             <div class="bg-white p-5 rounded-2xl border border-emerald-100 shadow-sm">
                                 <h3 class="font-bold text-brand-forest text-base mb-1">1. Value Addition to Raw Produce</h3>
-                                <p class="text-xs text-gray-600 leading-relaxed">We transform agricultural raw materials into rich, value-added food and beverage products right at the regional source.</p>
+                                <p class="text-xs text-gray-600 leading-relaxed">We transform agricultural raw materials into rich, value-added food and beverage products.</p>
                             </div>
-
                             <div class="bg-white p-5 rounded-2xl border border-emerald-100 shadow-sm">
                                 <h3 class="font-bold text-brand-forest text-base mb-1">2. Soybean Product Focus</h3>
-                                <p class="text-xs text-gray-600 leading-relaxed">Initial focus on developing high-quality soybean-based plant beverages and exploring further nutrient applications.</p>
+                                <p class="text-xs text-gray-600 leading-relaxed">Initial focus on developing high-quality soybean-based plant beverages.</p>
                             </div>
-
                             <div class="bg-white p-5 rounded-2xl border border-emerald-100 shadow-sm">
-                                <h3 class="font-bold text-brand-forest text-base mb-1">3. Consumer-Centric Flavor Variety</h3>
-                                <p class="text-xs text-gray-600 leading-relaxed">Focus on familiar regional taste profiles (Mango, Ilaychi, Chocolate) to ensure high consumer acceptance.</p>
-                            </div>
-
-                            <div class="bg-white p-5 rounded-2xl border border-emerald-100 shadow-sm">
-                                <h3 class="font-bold text-brand-forest text-base mb-1">4. Scalable Processing Framework</h3>
-                                <p class="text-xs text-gray-600 leading-relaxed">Building a flexible, scalable food-processing business model designed to expand into new products and geographical regions.</p>
+                                <h3 class="font-bold text-brand-forest text-base mb-1">3. Scalable Processing Framework</h3>
+                                <p class="text-xs text-gray-600 leading-relaxed">Building a flexible food-processing business model designed to expand into new markets.</p>
                             </div>
                         </div>
                     </div>
 
-                </div>
-
-                <!-- Interactive Model Comparison -->
-                <div class="mt-16 bg-white p-8 rounded-3xl border border-gray-200 shadow-sm">
-                    <h3 class="text-2xl font-bold text-brand-forest text-center mb-8">Value Chain Transformation Comparison</h3>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="p-6 bg-gray-50 rounded-2xl border border-gray-200">
-                            <h4 class="font-bold text-gray-700 text-lg mb-4 flex items-center gap-2">
-                                <i class="fa-solid fa-xmark text-rose-500"></i> Traditional Commodity Path
-                            </h4>
-                            <ul class="space-y-3 text-xs text-gray-600">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-gray-400"></i> Farm Gate Raw Soybean Sale</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-gray-400"></i> Commodity Traders & Middlemen</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-gray-400"></i> Low Margin Bulk Commodity Export</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-gray-400"></i> Minimal Farmer Value Realization</li>
-                            </ul>
-                        </div>
-
-                        <div class="p-6 bg-emerald-50 rounded-2xl border border-emerald-200">
-                            <h4 class="font-bold text-brand-forest text-lg mb-4 flex items-center gap-2">
-                                <i class="fa-solid fa-check text-brand-mint"></i> Avinyaa Ecosystem Path
-                            </h4>
-                            <ul class="space-y-3 text-xs text-brand-forest font-medium">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-seedling text-brand-mint"></i> Farmer-Sourced Quality Crop</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-gear text-brand-mint"></i> In-house Value Addition & Processing</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-box-open text-brand-mint"></i> Premium Consumer-Ready Beverage</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-chart-line text-brand-mint"></i> Shared Prosperity Across Chain</li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- 6. INNOVATION SECTION -->
         <section id="page-innovation" class="page-section">
             <div class="bg-brand-forest text-white py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -749,72 +612,28 @@
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                <!-- 5 Core Innovation Focus Grid -->
                 <div class="max-w-4xl mx-auto space-y-6">
-                    <h2 class="text-3xl font-extrabold text-brand-forest text-center mb-8">Our 5 Core Innovation Pillars</h2>
+                    <h2 class="text-3xl font-extrabold text-brand-forest text-center mb-8">Our Core Innovation Pillars</h2>
 
-                    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:border-brand-mint transition-all">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-brand-softMint text-brand-forest flex items-center justify-center font-bold shrink-0">1</div>
-                            <div>
-                                <h3 class="text-lg font-bold text-brand-forest">Soybean-Based Beverages</h3>
-                                <p class="text-xs text-gray-600 mt-1">Developing smooth, palatable plant-based beverage formulations using soybean as a core raw material, optimizing nutritional retention.</p>
-                            </div>
-                        </div>
+                    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+                        <h3 class="text-lg font-bold text-brand-forest">1. Soybean-Based Beverages</h3>
+                        <p class="text-sm text-gray-600 mt-1">Developing smooth, palatable plant-based beverage formulations using soybean as a core raw material.</p>
                     </div>
 
-                    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:border-brand-mint transition-all">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-brand-softMint text-brand-forest flex items-center justify-center font-bold shrink-0">2</div>
-                            <div>
-                                <h3 class="text-lg font-bold text-brand-forest">Flavour Innovation</h3>
-                                <p class="text-xs text-gray-600 mt-1">Exploring familiar and consumer-friendly Indian and global flavours such as Mango, Chocolate, and Ilaychi (Cardamom) to ease plant-dairy transition.</p>
-                            </div>
-                        </div>
+                    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+                        <h3 class="text-lg font-bold text-brand-forest">2. Flavour Innovation</h3>
+                        <p class="text-sm text-gray-600 mt-1">Exploring familiar and consumer-friendly Indian and global flavours such as Mango, Chocolate, and Ilaychi.</p>
                     </div>
 
-                    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:border-brand-mint transition-all">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-brand-softMint text-brand-forest flex items-center justify-center font-bold shrink-0">3</div>
-                            <div>
-                                <h3 class="text-lg font-bold text-brand-forest">Consumer-Centric Product Development</h3>
-                                <p class="text-xs text-gray-600 mt-1">Utilizing real-time consumer feedback, blind tasting trials, and market response to continually refine mouthfeel and stability.</p>
-                            </div>
-                        </div>
+                    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+                        <h3 class="text-lg font-bold text-brand-forest">3. Agricultural Value Addition</h3>
+                        <p class="text-sm text-gray-600 mt-1">Moving away from raw commodity trading towards processing high-value food formats right within the agricultural heartland.</p>
                     </div>
-
-                    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:border-brand-mint transition-all">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-brand-softMint text-brand-forest flex items-center justify-center font-bold shrink-0">4</div>
-                            <div>
-                                <h3 class="text-lg font-bold text-brand-forest">Agricultural Value Addition</h3>
-                                <p class="text-xs text-gray-600 mt-1">Moving away from raw commodity trading towards processing high-value food formats right within the agricultural heartland.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:border-brand-mint transition-all">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-brand-softMint text-brand-forest flex items-center justify-center font-bold shrink-0">5</div>
-                            <div>
-                                <h3 class="text-lg font-bold text-brand-forest">Future Product Roadmap</h3>
-                                <p class="text-xs text-gray-600 mt-1">Investigating secondary plant food formats including ready-to-drink options, fortified blends, and functional protein products.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Innovation Philosophy Box -->
-                <div class="mt-16 bg-brand-forest text-white rounded-3xl p-10 text-center relative overflow-hidden">
-                    <i class="fa-solid fa-quote-left text-8xl text-white/5 absolute -top-4 left-4"></i>
-                    <span class="text-brand-amber font-bold text-xs uppercase tracking-wider block mb-2">Our Innovation Philosophy</span>
-                    <blockquote class="text-2xl sm:text-3xl font-extrabold max-w-2xl mx-auto text-brand-cream">
-                        "From agricultural resources to consumer-ready products."
-                    </blockquote>
                 </div>
             </div>
         </section>
 
+        <!-- 7. MARKET SECTION -->
         <section id="page-market" class="page-section">
             <div class="bg-brand-forest text-white py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -823,183 +642,52 @@
                     <p class="mt-4 text-emerald-100 max-w-2xl mx-auto">Capitalizing on changing lifestyle preferences and growing demand for plant-based nutrition.</p>
                 </div>
             </div>
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-16">
-                <!-- Regional Focus Box -->
-                <div class="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm">
-                    <div class="grid lg:grid-cols-12 gap-8 items-center">
-                        <div class="lg:col-span-7 space-y-4">
-                            <span class="text-brand-gold font-bold text-xs uppercase tracking-wider">Initial Market Strategy</span>
-                            <h2 class="text-3xl font-extrabold text-brand-forest">Jalna & Regional Maharashtra</h2>
-                            <p class="text-sm text-gray-600 leading-relaxed">
-                                The food and beverage industry is continuously evolving with changing consumer preferences, new product categories and increasing interest in convenient and alternative food choices.
-                            </p>
-                            <p class="text-sm text-gray-600 leading-relaxed">
-                                We plan to initially focus on our regional market in <strong class="text-brand-forest">Jalna and surrounding districts</strong> before expanding footprint across Maharashtra and other key regions in India.
-                            </p>
-                        </div>
-                        <div class="lg:col-span-5 bg-brand-softMint/30 p-6 rounded-2xl border border-brand-mint/30">
-                            <h3 class="font-bold text-brand-forest text-lg mb-4">Expansion Phasing</h3>
-                            <div class="space-y-3 text-xs">
-                                <div class="flex items-center gap-3 bg-white p-3 rounded-xl shadow-sm">
-                                    <span class="w-6 h-6 rounded-full bg-brand-forest text-white flex items-center justify-center font-bold text-xs">1</span>
-                                    <span class="font-bold text-gray-800">Jalna & Adjacent Districts</span>
-                                </div>
-                                <div class="flex items-center gap-3 bg-white p-3 rounded-xl shadow-sm">
-                                    <span class="w-6 h-6 rounded-full bg-brand-forest text-white flex items-center justify-center font-bold text-xs">2</span>
-                                    <span class="font-bold text-gray-800">Statewide Maharashtra Distribution</span>
-                                </div>
-                                <div class="flex items-center gap-3 bg-white p-3 rounded-xl shadow-sm">
-                                    <span class="w-6 h-6 rounded-full bg-brand-forest text-white flex items-center justify-center font-bold text-xs">3</span>
-                                    <span class="font-bold text-gray-800">Pan-India Urban Markets</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm mb-16 text-center">
+                    <h2 class="text-3xl font-extrabold text-brand-forest mb-4">Initial Market Strategy: Jalna & Regional Maharashtra</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">We plan to initially focus on our regional market in Jalna and surrounding districts before expanding our footprint across Maharashtra and other key regions in India.</p>
                 </div>
-
-                <!-- Target Consumers Grid -->
-                <div>
-                    <h2 class="text-3xl font-extrabold text-brand-forest text-center mb-12">Target Consumer Segments</h2>
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-4">
-                                <i class="fa-solid fa-user-graduate"></i>
-                            </div>
-                            <h3 class="font-bold text-brand-forest text-lg mb-2">Young Consumers</h3>
-                            <p class="text-xs text-gray-600">Students and young adults looking for tasty, affordable on-the-go plant beverages.</p>
-                        </div>
-
-                        <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl mb-4">
-                                <i class="fa-solid fa-heart-pulse"></i>
-                            </div>
-                            <h3 class="font-bold text-brand-forest text-lg mb-2">Health-Conscious Individuals</h3>
-                            <p class="text-xs text-gray-600">People seeking low-cholesterol, nutrient-dense daily drink options.</p>
-                        </div>
-
-                        <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl mb-4">
-                                <i class="fa-solid fa-dumbbell"></i>
-                            </div>
-                            <h3 class="font-bold text-brand-forest text-lg mb-2">Fitness & Gym Audiences</h3>
-                            <p class="text-xs text-gray-600">Athletes and active individuals looking for clean plant protein sources.</p>
-                        </div>
-
-                        <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-xl mb-4">
-                                <i class="fa-solid fa-seedling"></i>
-                            </div>
-                            <h3 class="font-bold text-brand-forest text-lg mb-2">Plant-Based Explorers</h3>
-                            <p class="text-xs text-gray-600">Consumers trying dairy-free alternatives without compromising on taste.</p>
-                        </div>
-
-                        <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center text-xl mb-4">
-                                <i class="fa-solid fa-hotel"></i>
-                            </div>
-                            <h3 class="font-bold text-brand-forest text-lg mb-2">Hotels & Food Services</h3>
-                            <p class="text-xs text-gray-600">B2B partners requiring quality soy beverages for culinary or beverage service.</p>
-                        </div>
-
-                        <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center text-xl mb-4">
-                                <i class="fa-solid fa-store"></i>
-                            </div>
-                            <h3 class="font-bold text-brand-forest text-lg mb-2">Retail Beverage Buyers</h3>
-                            <p class="text-xs text-gray-600">Local shoppers seeking unique, locally produced packaged beverages.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Market Disclaimer Note -->
-                <div class="p-4 bg-gray-100 rounded-xl text-center text-xs text-gray-500 border border-gray-200">
-                    <i class="fa-solid fa-circle-info mr-1"></i>
-                    <strong>Note:</strong> Quantitative market-size estimates and specific category figures will be added upon final verification through ongoing formal market research studies.
+                
+                <h2 class="text-3xl font-extrabold text-brand-forest text-center mb-12">Target Consumer Segments</h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm"><h3 class="font-bold text-brand-forest">Young Consumers</h3></div>
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm"><h3 class="font-bold text-brand-forest">Health-Conscious Individuals</h3></div>
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm"><h3 class="font-bold text-brand-forest">Fitness & Gym Audiences</h3></div>
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm"><h3 class="font-bold text-brand-forest">Plant-Based Explorers</h3></div>
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm"><h3 class="font-bold text-brand-forest">Hotels & Food Services</h3></div>
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm"><h3 class="font-bold text-brand-forest">Retail Beverage Buyers</h3></div>
                 </div>
             </div>
         </section>
 
+        <!-- 8. FARMERS & IMPACT SECTION -->
         <section id="page-farmers" class="page-section">
             <div class="bg-brand-forest text-white py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <span class="text-brand-amber text-sm font-semibold tracking-wider uppercase">Our Purpose</span>
                     <h1 class="text-4xl sm:text-5xl font-extrabold mt-2">Connecting Farmers with Value Addition</h1>
-                    <p class="mt-4 text-emerald-100 max-w-2xl mx-auto">Agriculture is at the heart of our business vision. When agriculture connects with processing, value is created across the entire chain.</p>
+                    <p class="mt-4 text-emerald-100 max-w-2xl mx-auto">Agriculture is at the heart of our business vision.</p>
                 </div>
             </div>
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-16">
-                <!-- Farmer Focus Grid -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-brand-forest flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-arrow-up-right-dots"></i>
-                        </div>
-                        <h3 class="font-bold text-brand-forest text-lg mb-2">Value Addition</h3>
-                        <p class="text-xs text-gray-600 leading-relaxed">Creating premium end products from raw crops instead of limiting farm output to commodity trading.</p>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+                        <h3 class="font-bold text-brand-forest text-xl mb-3">Value Addition</h3>
+                        <p class="text-gray-600 text-sm">Creating premium end products from raw crops instead of limiting farm output to commodity trading.</p>
                     </div>
-
-                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-brand-forest flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-link"></i>
-                        </div>
-                        <h3 class="font-bold text-brand-forest text-lg mb-2">Market Linkages</h3>
-                        <p class="text-xs text-gray-600 leading-relaxed">Building stable pathways linking local soybean farming directly with retail consumer demand.</p>
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+                        <h3 class="font-bold text-brand-forest text-xl mb-3">Market Linkages</h3>
+                        <p class="text-gray-600 text-sm">Building stable pathways linking local farming directly with retail consumer demand.</p>
                     </div>
-
-                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-brand-forest flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-industry"></i>
-                        </div>
-                        <h3 class="font-bold text-brand-forest text-lg mb-2">Processing Ecosystem</h3>
-                        <p class="text-xs text-gray-600 leading-relaxed">Establishing localized food-processing infrastructure in agricultural hubs like Jalna.</p>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-brand-forest flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-people-group"></i>
-                        </div>
-                        <h3 class="font-bold text-brand-forest text-lg mb-2">Long-Term Growth</h3>
-                        <p class="text-xs text-gray-600 leading-relaxed">Fostering an inclusive agri-processing ecosystem where farmers grow alongside the enterprise.</p>
-                    </div>
-                </div>
-
-                <!-- Interactive Impact Calculator Tool for Farmers -->
-                <div class="bg-brand-cream/60 p-8 sm:p-12 rounded-3xl border border-brand-gold/30">
-                    <div class="max-w-3xl mx-auto space-y-8">
-                        <div class="text-center">
-                            <span class="text-brand-gold font-bold text-xs uppercase tracking-wider">Value Addition Simulator</span>
-                            <h2 class="text-3xl font-extrabold text-brand-forest mt-1">Soybean Processing Impact Estimator</h2>
-                            <p class="text-xs text-gray-600 mt-2">Simulate how processing converts raw crop volume into enhanced consumer beverage value.</p>
-                        </div>
-
-                        <div class="bg-white p-6 rounded-2xl border border-gray-200 space-y-6">
-                            <div>
-                                <div class="flex justify-between items-center mb-2">
-                                    <label for="crop-slider" class="text-sm font-bold text-gray-800">Soybean Volume (Quintals):</label>
-                                    <span id="crop-val" class="text-lg font-extrabold text-brand-forest">50 Quintals</span>
-                                </div>
-                                <input type="range" id="crop-slider" min="10" max="500" value="50" step="10" oninput="calculateImpact()" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-brand-forest">
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-4 text-center border-t border-gray-100 pt-6">
-                                <div class="bg-emerald-50 p-4 rounded-xl">
-                                    <span class="text-[10px] uppercase font-bold text-gray-500 block">Est. Beverage Yield</span>
-                                    <span id="beverage-yield" class="text-2xl font-extrabold text-brand-forest">12,500 L</span>
-                                </div>
-                                <div class="bg-amber-50 p-4 rounded-xl">
-                                    <span class="text-[10px] uppercase font-bold text-gray-500 block">Value Addition Potential</span>
-                                    <span id="value-add" class="text-2xl font-extrabold text-brand-gold">3.5x Multiplier</span>
-                                </div>
-                            </div>
-                            <p class="text-[11px] text-gray-400 text-center italic">*Illustrative simulation model demonstrating how value processing scales economic potential vs raw trading.</p>
-                        </div>
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+                        <h3 class="font-bold text-brand-forest text-xl mb-3">Long-Term Growth</h3>
+                        <p class="text-gray-600 text-sm">Fostering an inclusive agri-processing ecosystem where farmers grow alongside the enterprise.</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- 9. CONTACT SECTION -->
         <section id="page-contact" class="page-section">
             <div class="bg-brand-forest text-white py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -1011,16 +699,18 @@
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <div class="grid lg:grid-cols-12 gap-12">
+                    
                     <!-- Contact Details Box -->
                     <div class="lg:col-span-5 space-y-8">
                         <div>
                             <h2 class="text-2xl font-extrabold text-brand-forest mb-4">Contact Information</h2>
                             <p class="text-sm text-gray-600 leading-relaxed">
-                                Have a question, partnership idea, or business enquiry? Reach out to us directly through any of the channels below.
+                                Have a question, partnership idea, or business enquiry? Reach out to our founders directly.
                             </p>
                         </div>
 
                         <div class="space-y-4">
+                            <!-- Location -->
                             <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-gray-100 shadow-sm">
                                 <div class="w-10 h-10 rounded-xl bg-brand-softMint text-brand-forest flex items-center justify-center font-bold text-lg shrink-0">
                                     <i class="fa-solid fa-location-dot"></i>
@@ -1031,33 +721,32 @@
                                 </div>
                             </div>
 
-                            <a href="tel:+919876543210" class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-gray-100 shadow-sm hover:border-brand-mint transition-colors block">
+                            <!-- Mobile Phones -->
+                            <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-gray-100 shadow-sm">
                                 <div class="w-10 h-10 rounded-xl bg-brand-softMint text-brand-forest flex items-center justify-center font-bold text-lg shrink-0">
                                     <i class="fa-solid fa-phone"></i>
                                 </div>
-                                <div>
-                                    <h4 class="font-bold text-xs uppercase text-gray-400">Mobile Phone</h4>
-                                    <p class="text-sm font-semibold text-brand-forest">+91 98765 43210</p>
+                                <div class="space-y-2">
+                                    <h4 class="font-bold text-xs uppercase text-gray-400">Direct Contact</h4>
+                                    <div>
+                                        <p class="text-xs text-gray-500">Karan Bhagure (Founder & CEO)</p>
+                                        <a href="tel:+919370073008" class="text-sm font-semibold text-brand-forest hover:text-brand-mint">+91 93700 73008</a>
+                                    </div>
+                                    <div class="pt-1">
+                                        <p class="text-xs text-gray-500">Abhijit Pawar (Co-Founder & CFO)</p>
+                                        <a href="tel:+919022972859" class="text-sm font-semibold text-brand-forest hover:text-brand-mint">+91 90229 72859</a>
+                                    </div>
                                 </div>
-                            </a>
+                            </div>
 
-                            <a href="mailto:info@avinyaafoods.com" class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-gray-100 shadow-sm hover:border-brand-mint transition-colors block">
-                                <div class="w-10 h-10 rounded-xl bg-brand-softMint text-brand-forest flex items-center justify-center font-bold text-lg shrink-0">
-                                    <i class="fa-solid fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-xs uppercase text-gray-400">Email Address</h4>
-                                    <p class="text-sm font-semibold text-brand-forest">info@avinyaafoods.com</p>
-                                </div>
-                            </a>
-
-                            <a href="https://wa.me/919876543210" target="_blank" class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-gray-100 shadow-sm hover:border-brand-mint transition-colors block">
+                            <!-- WhatsApp -->
+                            <a href="https://wa.me/919370073008" target="_blank" class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-gray-100 shadow-sm hover:border-brand-mint transition-colors block">
                                 <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-lg shrink-0">
                                     <i class="fa-brands fa-whatsapp"></i>
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-xs uppercase text-gray-400">WhatsApp</h4>
-                                    <p class="text-sm font-semibold text-emerald-600">+91 98765 43210</p>
+                                    <p class="text-sm font-semibold text-emerald-600">Chat with us on WhatsApp</p>
                                 </div>
                             </a>
                         </div>
@@ -1082,17 +771,6 @@
                                     <label class="block text-xs font-bold uppercase text-gray-600 mb-1">Email Address *</label>
                                     <input type="email" id="contact-email" name="email" required placeholder="name@domain.com" class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-brand-forest">
                                 </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-bold uppercase text-gray-600 mb-1">Entity / Organization</label>
-                                <select id="contact-company" name="company" class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-brand-forest">
-                                    <option value="Consumer / Individual">Consumer / Individual</option>
-                                    <option value="Farmer / Agri Producer">Farmer / Agri Producer</option>
-                                    <option value="Distributor / Retailer">Distributor / Retailer</option>
-                                    <option value="Hotel / Food Service">Hotel / Food Service</option>
-                                    <option value="Organization / Partner">Organization / Partner</option>
-                                </select>
                             </div>
 
                             <div>
@@ -1124,6 +802,7 @@
         </div>
     </div>
 
+    <!-- FOOTER -->
     <footer class="bg-brand-darkGreen text-white border-t border-brand-leaf/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -1148,8 +827,8 @@
                     <ul class="space-y-2 text-xs text-gray-300">
                         <li><button onclick="navigateTo('home')" class="hover:text-brand-amber transition-colors">Home</button></li>
                         <li><button onclick="navigateTo('about')" class="hover:text-brand-amber transition-colors">About Us</button></li>
+                        <li><button onclick="navigateTo('founders')" class="hover:text-brand-amber transition-colors">Founders</button></li>
                         <li><button onclick="navigateTo('products')" class="hover:text-brand-amber transition-colors">Products</button></li>
-                        <li><button onclick="navigateTo('problem-solution')" class="hover:text-brand-amber transition-colors">The Challenge & Solution</button></li>
                     </ul>
                 </div>
 
@@ -1169,10 +848,8 @@
                     <h4 class="font-bold text-sm text-brand-amber mb-4">Connect With Us</h4>
                     <p class="text-xs text-gray-300 mb-4">Jalna, Maharashtra, India</p>
                     <div class="flex space-x-3">
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-brand-amber hover:text-brand-darkGreen transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-brand-amber hover:text-brand-darkGreen transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-brand-amber hover:text-brand-darkGreen transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-brand-amber hover:text-brand-darkGreen transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/avinyaagroup?stkn=MTJjMml1cDB0OG5jeQ==" target="_blank" class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-brand-amber hover:text-brand-darkGreen transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/karanbhagure?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-brand-amber hover:text-brand-darkGreen transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                 </div>
 
@@ -1187,18 +864,15 @@
     <script>
         // Router State Management
         function navigateTo(pageId) {
-            // Hide all pages
             const pages = document.querySelectorAll('.page-section');
             pages.forEach(p => p.classList.remove('active'));
 
-            // Show targeted page
             const target = document.getElementById('page-' + pageId);
             if (target) {
                 target.classList.add('active');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
-            // Update Desktop Active Nav State
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.classList.remove('bg-brand-forest', 'text-white');
                 btn.classList.add('text-gray-700');
@@ -1210,7 +884,6 @@
                 activeNav.classList.remove('text-gray-700');
             }
 
-            // Close mobile menu if open
             const mobileMenu = document.getElementById('mobile-menu');
             if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
                 toggleMobileMenu();
@@ -1274,33 +947,6 @@
             });
         }
 
-        // Flavor Voting Interaction
-        let votes = { 1: 142, 2: 210 };
-        function castVote(id) {
-            votes[id]++;
-            document.getElementById(`vote-count-${id}`).innerText = `${votes[id]} votes`;
-            showNotification('Thank you for voting!');
-        }
-
-        function submitFlavorSuggestion(e) {
-            e.preventDefault();
-            const input = document.getElementById('new-flavor-input');
-            if (input.value.trim()) {
-                showNotification(`Suggested "${input.value}"! Thank you for helping shape our future products.`);
-                input.value = '';
-            }
-        }
-
-        // Farmer Impact Calculator Logic
-        function calculateImpact() {
-            const val = document.getElementById('crop-slider').value;
-            document.getElementById('crop-val').innerText = `${val} Quintals`;
-            
-            // Approx 1 quintal soy -> ~250 liters soy beverage yield
-            const yieldLiters = val * 250;
-            document.getElementById('beverage-yield').innerText = `${yieldLiters.toLocaleString()} L`;
-        }
-
         // Contact Form Submission Handler via Node.js Backend API
         async function handleContactSubmit(e) {
             e.preventDefault();
@@ -1314,11 +960,11 @@
                 name: document.getElementById('contact-name').value,
                 phone: document.getElementById('contact-phone').value,
                 email: document.getElementById('contact-email').value,
-                company: document.getElementById('contact-company').value,
                 message: document.getElementById('contact-message').value
             };
 
             try {
+                // Ensure this URL matches your active backend URL!
                 const response = await fetch('https://avinyaa-backend.onrender.com/api/contact', {
                     method: 'POST',
                     headers: {
@@ -1330,14 +976,14 @@
                 const result = await response.json();
 
                 if (result.success) {
-                    showNotification('Enquiry sent successfully! Delivered to lightphoton3108@gmail.com.');
+                    showNotification('Enquiry sent successfully!');
                     document.getElementById('contact-form').reset();
                 } else {
                     showNotification('Error: ' + result.message);
                 }
             } catch (error) {
                 console.error('Submission Error:', error);
-                showNotification('Unable to connect to backend server. Please verify `node server.js` is running.');
+                showNotification('Unable to connect to backend server. Please verify backend is running.');
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalText;
